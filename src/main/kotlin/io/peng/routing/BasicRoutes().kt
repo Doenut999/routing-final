@@ -47,10 +47,10 @@ fun Route.getTailCard(){
     }
 }
 
-
+//TailCard with route parameter {correct: /yes/one and /yes/one/me/you/him/her/they/them}
 fun Route.lastOne(){
     get("yes/{one...}"){
-        val k = call.parameters.getAll("one")
+        val k = call.parameters.getAll("one") // puts everything in *one* parameter in an array
         call.respondText("$k")
     }
 }
